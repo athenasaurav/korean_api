@@ -1,0 +1,30 @@
+intents:
+- greet
+- goodbye
+- bot_challenge
+- 지하철호선
+- 버스노선
+entities:
+- STATION
+- FROM
+- TO
+slots:
+  FROM:
+    type: text
+  STATION:
+    type: text
+  TO:
+    type: text
+templates:
+  utter_greet:
+  - text: 안녕하세요 어떻게 도와 드릴까요?
+  utter_goodbye:
+  - text: 안녕
+  utter_iamabot:
+  - text: 나는 Rasa에 의해 구동되는 봇입니다.
+actions:
+- utter_greet
+- action_station
+- utter_goodbye
+- utter_iamabot
+- action_bus_station
