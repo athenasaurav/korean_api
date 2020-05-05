@@ -4,6 +4,14 @@ intents:
 - bot_challenge
 - 지하철호선
 - 버스노선
+- bus route
+- Daeguyeogo_hyomokLibrary
+- seoguchung_dongsungro
+- dongdaegu_bukby
+- spa_dongsungro
+- Bus 49
+- daeguHanil_bongdukdong
+- daegubank_headoffice
 entities:
 - STATION
 - FROM
@@ -16,15 +24,41 @@ slots:
   TO:
     type: text
 templates:
-  utter_greet:
-  - text: 안녕하세요 어떻게 도와 드릴까요?
+  utter_Bus_49:
+  - text: 예 도와드릴게요. 이 버스는 범물동에서 동대구역으로 다니는 버스입니다
+  utter_Bus_route:
+  - text: 범물동에서 동대구역으로 가시고 싶군요. 49번 버스를 타세요
+  - text: 아 예 49번 버스 타시면 됩니다
+  utter_daegubank_headoffice:
+  - text: 네 대구은행본점에서 급행2번 승차 후 정화우방팔래스 앞에서 하차, 정화우방팔레스 건너에서 405번 승차 후 남구청 네거리에서 하차하시면
+      됩니다.
+  utter_daeguHanil_bongdukdong:
+  - text: 이이팔 공원에서 240번 버스 탑승하시면 됩니다.
+  utter_Daeguyeogo_hyomokLibrary:
+  - text: 그랜드호텔 건너편 정류장에서 순환2-1번에 탑승하신 후, 우방 메트로 팔레스 앞에서 하차하여 508번이나 518로 환승할 수 있습니다.
+  utter_dongdaegu_bukby:
+  - text: 경상감영공원 건너에서 730번 버스 탑승하시면 됩니다.
   utter_goodbye:
   - text: 안녕
+  utter_greet:
+  - text: 안녕하세요 어떻게 도와 드릴까요?
   utter_iamabot:
   - text: 나는 Rasa에 의해 구동되는 봇입니다.
+  utter_seoguchung_dongsungro:
+  - text: 서구청에서 급행1번, 급행5번, 240번, 425번을 타시고 이이팔 기념중앙공원에서 내리시면 됩니다.
+  utter_spa_dongsungro:
+  - text: 240번 타고 CGV대구한일건너 정류장에서 하차하시거나, 304번 탑승 후 경상감영공원건너 정류장에서 하차하시면 됩니다.
 actions:
 - utter_greet
 - action_station
 - utter_goodbye
 - utter_iamabot
 - action_bus_station
+- utter_Bus_49
+- utter_Bus_route
+- utter_dongdaegu_bukby
+- utter_Daeguyeogo_hyomokLibrary
+- utter_daeguHanil_bongdukdong
+- utter_seoguchung_dongsungro
+- utter_spa_dongsungro
+- utter_daegubank_headoffice
