@@ -12,6 +12,12 @@ intents:
 - Bus 49
 - daeguHanil_bongdukdong
 - daegubank_headoffice
+- bus_station
+- last_subway
+- duration_subway
+- dir_subway
+- line_subway
+- first_subway
 entities:
 - STATION
 - FROM
@@ -48,6 +54,18 @@ templates:
   - text: 서구청에서 급행1번, 급행5번, 240번, 425번을 타시고 이이팔 기념중앙공원에서 내리시면 됩니다.
   utter_spa_dongsungro:
   - text: 240번 타고 CGV대구한일건너 정류장에서 하차하시거나, 304번 탑승 후 경상감영공원건너 정류장에서 하차하시면 됩니다.
+  utter_bus_station:
+  - text: 반월당역 이번출구 에서 649 번 버스 탑승하시면 됩니다
+  utter_duration_subway:
+  - text: 대공원 에서 용산 까지는 이십 칠 분 소요됩니다.
+  utter_dir_subway:
+  - text: 이 호선 문양 방면 열차 탑승하시면 됩니다
+  utter_last_subway:
+  - text: 평일에 대공원 에서 출발하는 막차는 이십 삼 시 사십 팔 분 입니다.
+  utter_first_subway:
+  - text: 평일에 대공원 에서 출발하는 막차는 다섯 시 오십 구 분 입니다.
+  utter_line_subway:
+  - text: 용산 은 이 호선에 있습니다.
 actions:
 - utter_greet
 - action_station
@@ -62,3 +80,9 @@ actions:
 - utter_seoguchung_dongsungro
 - utter_spa_dongsungro
 - utter_daegubank_headoffice
+- utter_bus_station
+- utter_duration_subway
+- utter_dir_subway
+- utter_last_subway
+- utter_first_subway
+- utter_line_subway
