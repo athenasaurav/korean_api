@@ -3,57 +3,88 @@ intents:
 - goodbye
 - bot_challenge
 - 지하철호선
-- 버스노선
-- bus route
-- Daeguyeogo_hyomokLibrary
-- seoguchung_dongsungro
-- dongdaegu_bukby
-- spa_dongsungro
-- Bus 49
-- daeguHanil_bongdukdong
-- daegubank_headoffice
 - bus_station
-- last_subway
 - duration_subway
 - dir_subway
-- line_subway
+- last_subway
 - first_subway
+- line_subway
+- Bus 49
+- bus route
+- dongdaegu_bukby
+- Daeguyeogo_hyomokLibrary
+- daeguHanil_bongdukdong
+- seoguchung_dongsungro
+- spa_dongsungro
+- daegubank_headoffice
+- nope
+- yup
+- 소요시간
+- 지하철노선
+- 버스노선
+- 지하철첫차
+- weekday
+- direction
+- subway_from
+- 지하철막차
 entities:
 - STATION
-- FROM
-- TO
+- dr_sub_From
+- dr_sub_To
+- dir_sub_From
+- dir_sub_To
+- bus_stn_from
+- bus_stn_to
+- sub_day
+- sub_dir
+- sub_from
 slots:
-  FROM:
-    type: text
   STATION:
-    type: text
-  TO:
-    type: text
+    type: unfeaturized
+  bus_stn_from:
+    type: unfeaturized
+  bus_stn_to:
+    type: unfeaturized
+  dir_sub_From:
+    type: unfeaturized
+  dir_sub_To:
+    type: unfeaturized
+  dr_sub_From:
+    type: unfeaturized
+  dr_sub_To:
+    type: unfeaturized
+  sub_day:
+    type: unfeaturized
+  sub_dir:
+    type: unfeaturized
+  sub_from:
+    type: unfeaturized
 templates:
+  utter_greet:
+  - text: 안녕하세요 어떻게 도와 드릴까요?
+  - text: 안녕하세요 어떻게 도와 드릴까요?
+  utter_goodbye:
+  - text: 도움이 되셨으면 좋겠네요. 남은 하루도 좋은 시간되세요
+  utter_iamabot:
+  - text: 나는 Rasa에 의해 구동되는 봇입니다.
   utter_Bus_49:
   - text: 예 도와드릴게요. 이 버스는 범물동에서 동대구역으로 다니는 버스입니다
   utter_Bus_route:
   - text: 범물동에서 동대구역으로 가시고 싶군요. 49번 버스를 타세요
   - text: 아 예 49번 버스 타시면 됩니다
-  utter_daegubank_headoffice:
-  - text: 네 대구은행본점에서 급행2번 승차 후 정화우방팔래스 앞에서 하차, 정화우방팔레스 건너에서 405번 승차 후 남구청 네거리에서 하차하시면
-      됩니다.
-  utter_daeguHanil_bongdukdong:
-  - text: 이이팔 공원에서 240번 버스 탑승하시면 됩니다.
-  utter_Daeguyeogo_hyomokLibrary:
-  - text: 그랜드호텔 건너편 정류장에서 순환2-1번에 탑승하신 후, 우방 메트로 팔레스 앞에서 하차하여 508번이나 518로 환승할 수 있습니다.
   utter_dongdaegu_bukby:
   - text: 경상감영공원 건너에서 730번 버스 탑승하시면 됩니다.
-  utter_goodbye:
-  - text: 안녕
-  utter_greet:
-  - text: 안녕하세요 어떻게 도와 드릴까요?
-  utter_iamabot:
-  - text: 나는 Rasa에 의해 구동되는 봇입니다.
+  utter_Daeguyeogo_hyomokLibrary:
+  - text: 그랜드호텔 건너편 정류장에서 순환2-1번에 탑승하신 후, 우방 메트로 팔레스 앞에서 하차하여 508번이나 518로 환승할 수 있습니다.
+  utter_daeguHanil_bongdukdong:
+  - text: 이이팔 공원에서 240번 버스 탑승하시면 됩니다.
   utter_seoguchung_dongsungro:
   - text: 서구청에서 급행1번, 급행5번, 240번, 425번을 타시고 이이팔 기념중앙공원에서 내리시면 됩니다.
   utter_spa_dongsungro:
   - text: 240번 타고 CGV대구한일건너 정류장에서 하차하시거나, 304번 탑승 후 경상감영공원건너 정류장에서 하차하시면 됩니다.
+  utter_daegubank_headoffice:
+  - text: 네 대구은행본점에서 급행2번 승차 후 정화우방팔래스 앞에서 하차, 정화우방팔레스 건너에서 405번 승차 후 남구청 네거리에서 하차하시면
+      됩니다.
   utter_bus_station:
   - text: 반월당역 이번출구 에서 649 번 버스 탑승하시면 됩니다
   utter_duration_subway:
@@ -66,12 +97,22 @@ templates:
   - text: 평일에 대공원 에서 출발하는 막차는 다섯 시 오십 구 분 입니다.
   utter_line_subway:
   - text: 용산 은 이 호선에 있습니다.
+  utter_ask_first_sub_day:
+  - text: 무슨 요일에?
+  utter_ask_first_sub_dir:
+  - text: 어느 방향으로?
+  utter_ask_first_sub_from:
+  - text: 어느 역?
+  utter_ask_last_sub_day:
+  - text: 무슨 요일에?
+  utter_ask_last_sub_dir:
+  - text: 어느 방향으로?
+  utter_ask_last_sub_from:
+  - text: 어느 역?
 actions:
 - utter_greet
-- action_station
 - utter_goodbye
 - utter_iamabot
-- action_bus_station
 - utter_Bus_49
 - utter_Bus_route
 - utter_dongdaegu_bukby
@@ -81,8 +122,28 @@ actions:
 - utter_spa_dongsungro
 - utter_daegubank_headoffice
 - utter_bus_station
-- utter_duration_subway
 - utter_dir_subway
+- utter_duration_subway
 - utter_last_subway
 - utter_first_subway
 - utter_line_subway
+- action_station_1
+- action_station_2
+- action_Question
+- action_bus_station_1
+- action_bus_station_2
+- action_default_fallback
+- action_duration_subway_1
+- action_duration_subway_2
+- action_dir_subway_1
+- action_dir_subway_2
+- utter_ask_first_sub_day
+- utter_ask_first_sub_dir
+- utter_ask_first_sub_from
+- utter_ask_last_sub_day
+- utter_ask_last_sub_dir
+- utter_ask_last_sub_from
+- action_last_subway_1
+- action_last_subway_2
+- action_first_subway_1
+- action_first_subway_2
